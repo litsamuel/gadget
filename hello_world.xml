@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Module>
   <ModulePrefs title="Hello World"
-    description="Matches any email adress on the subject of the Email"
+    description="Matches email adresses and echoes 'Hello World' string in emails"
     height="20"
     author="Sarah M and Walter Q"
     author_email="..."
@@ -34,7 +34,28 @@
    "html" and "card" are required for all Gmail contextual gadgets. -->
   <Content type="html" view="card">
     <![CDATA[
-      <div>HELLO STODDARTS!!!</div>
+      <!-- Start with Single Sign-On -->
+      <script type="text/javascript" src="https://example.com/gadgets/sso.js"></script>
+      <script type="text/javascript">
+
+        <!-- Fetch the array of content matches. -->
+        matches = google.contentmatch.getContentMatches();
+        var matchList = document.createElement('UL');
+        var listItem;
+        var extractedText;
+
+        <!-- Iterate through the array and display output for each match. -->
+        for (var match in matches) {
+          for (var key in matches[match]) {
+            listItem = document.createElement('LI');
+            extractedText = document.createTextNode(key + ": " + matches[match][key]);
+            listItem.appendChild(extractedText);
+            matchList.appendChild(listItem);
+          }
+        }
+        document.body.appendChild(matchList);
+        gadgets.window.adjustHeight(100);
+      </script>
     ]]>
   </Content>
 </Module>
