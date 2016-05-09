@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Module>
   <ModulePrefs title="Hello World"
-    description="Matches and echoes 'Hello World' string in emails"
+    description="Matches any email adress on the subject of the Email"
     height="20"
     author="Sarah M and Walter Q"
     author_email="..."
@@ -24,7 +24,7 @@
      in the manifest, but is still expected to be present. -->
     <Require feature="google.contentmatch">
       <Param name="extractors">
-        google.com:HelloWorld
+        google.com:EmailAddressExtractor
       </Param>
     </Require>
 
