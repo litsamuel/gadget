@@ -50,7 +50,7 @@
             matchList.appendChild(listItem);
           }
         }
-        mainGUI.body.appendChild(matchList);
+        mainGUI.appendChild(matchList);
         gadgets.window.adjustHeight(100);
       </script>
     ]]>
