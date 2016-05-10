@@ -34,7 +34,7 @@
    "html" and "card" are required for all Gmail contextual gadgets. -->
   <Content type="html" view="card">
     <![CDATA[
-		<div id="divMain"></div>
+		<div id="divMain" style="border-stile:solid;border-width:2px"></div>
       <script type="text/javascript">
 		var mainGUI = document.getElementById("divMain");
         matches = google.contentmatch.getContentMatches();
