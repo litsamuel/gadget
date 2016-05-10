@@ -38,14 +38,14 @@
       <script type="text/javascript">
 		var mainGUI = document.getElementById("divMain");
         matches = google.contentmatch.getContentMatches();
-        var matchList = mainGUI.createElement('UL');
+        var matchList = document.createElement('UL');
         var listItem;
         var extractedText;
 
         for (var match in matches) {
           for (var key in matches[match]) {
-            listItem = mainGUI.createElement('LI');
-            extractedText = mainGUI.createTextNode(key + ": " + matches[match][key]);
+            listItem = document.createElement('LI');
+            extractedText = document.createTextNode(key + ": " + matches[match][key]);
             listItem.appendChild(extractedText);
             matchList.appendChild(listItem);
           }
